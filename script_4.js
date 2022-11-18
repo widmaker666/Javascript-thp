@@ -19,11 +19,31 @@ const entrepreneurs = [
     { first: 'Peter', last: 'Thiel', year: 1967 }
     ];
 
-    let tableau = []
-   for (let index in entrepreneurs) {
-     if (entrepreneurs[index].year >= 1970 && entrepreneurs[index].year < 1980)
-    {
-        tableau.push(entrepreneurs[index])
-    }
-   }
-console.log(tableau)
+    
+entrepreneurs.forEach(arrayEntrepreneur => { 
+    if (arrayEntrepreneur.year >= 1970 && arrayEntrepreneur.year < 1980)   
+    console.log(arrayEntrepreneur);
+  }); 
+
+entrepreneurs.forEach(nomPrenom => {
+    console.log([nomPrenom.first, nomPrenom.last]);
+});
+
+entrepreneurs.forEach(ages => {
+ 
+let age = 2022 - ages.year
+console.log([ages.first, ages.last, `"vous avez ${age}"`]);
+
+});
+
+
+ let ordre = entrepreneurs.sort((a,b) => {
+    if (a.last < b.last)
+    return -1;
+
+    if (a.last > b.last)
+    return 1
+
+    
+} );
+console.log(ordre);
